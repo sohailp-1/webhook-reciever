@@ -8,11 +8,8 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# SQLite specific configuration
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"check_same_thread": False}
-)
+# Create database engine
+engine = create_engine(DATABASE_URL)
 
 # Session object
 SessionLocal = sessionmaker(
